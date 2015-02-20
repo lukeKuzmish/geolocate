@@ -44,4 +44,3 @@ for ($i = 1; $i < count($argv); $i++) {
     echo "\n";
 }
 echo "\n";
-?>
