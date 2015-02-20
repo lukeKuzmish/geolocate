@@ -3,5 +3,5 @@
 # Set GEO_PATH to the location of the geolocate.php file
 # Use absolute pathing if you want to sym link to /usr/bin/
 #
-GEO_PATH="/home/EXAMPLE/PATH/TO/geolocate/geolocate.php"
+GEO_PATH="/home/luke/geolocate/geolocate.php"
 php $GEO_PATH $*
