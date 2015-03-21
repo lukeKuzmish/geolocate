@@ -52,6 +52,8 @@ $about = <<<EOC
   
 
 EOC;
+
+
 if ((in_array("-h", $argv)) or (in_array("--help", $argv))) {
     die($about);
 }
