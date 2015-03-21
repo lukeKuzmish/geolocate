@@ -38,8 +38,11 @@ $url = 'https://freegeoip.net/json/';
 for ($i = 1; $i < count($argv); $i++) {
     $json = file_get_contents($url . $argv[$i]);
     $response = json_decode($json, true);
+    echo "\n-------------\n{$argv[$i]}\n-------------\n";
     foreach ($response as $k => $v) {
-        echo "\n$k: $v";
+        $key = str_pad($k . ":",15, " ", STR_PAD_LEFT);
+        $val = "  $v";
+        echo "\n$key$val";
     }
     echo "\n";
 }
