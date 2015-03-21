@@ -1,33 +1,55 @@
 <?php
 $about = <<<EOC
-/*
- *      geolocate.php
- *      
- *      A PHP command-line tool to get geolocation information about
- *      an IP address (or addresses).
- *
- *      Example usage:
- *
- *              $ php geolocate.php github.com
- *
- *              ip: 192.30.252.128
- *              country_code: US
- *              country_name: United States
- *              region_code: CA
- *              region_name: California
- *              city: San Francisco
- *              zip_code: 94107
- *              time_zone: America/Los_Angeles
- *              latitude: 37.77
- *              longitude: -122.394
- *              metro_code: 807
- *
- *      Author:
- *              Luke Kuzmish <luke@lukekuzmish.com>
- *
- *      Repository:
- *              https://github.com/lukeKuzmish/geolocate
- */ 
+
+       geolocate.php
+       
+       A PHP command-line tool to get geolocation information about
+       an IP address (or addresses).
+ 
+       Example usage:
+ 
+               $ php geolocate.php 172.56.1.65 github.com
+
+                -------------
+                172.56.1.65
+                -------------
+
+                           ip:  172.56.1.65
+                 country_code:  US
+                 country_name:  United States
+                  region_code:  GA
+                  region_name:  Georgia
+                         city:  Forest Park
+                     zip_code:  30050
+                    time_zone:  America/New_York
+                     latitude:  33.622
+                    longitude:  -84.37
+                   metro_code:  524
+
+                -------------
+                github.com
+                -------------
+
+                           ip:  192.30.252.128
+                 country_code:  US
+                 country_name:  United States
+                  region_code:  CA
+                  region_name:  California
+                         city:  San Francisco
+                     zip_code:  94107
+                    time_zone:  America/Los_Angeles
+                     latitude:  37.77
+                    longitude:  -122.394
+                   metro_code:  807
+
+
+
+       Author:
+               Luke Kuzmish <luke@lukekuzmish.com>
+ 
+       Repository:
+               https://github.com/lukeKuzmish/geolocate
+  
 
 EOC;
 if ((in_array("-h", $argv)) or (in_array("--help", $argv))) {
