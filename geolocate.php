@@ -40,7 +40,7 @@ for ($i = 1; $i < count($argv); $i++) {
     $response = json_decode($json, true);
     echo "\n-------------\n{$argv[$i]}\n-------------\n";
     foreach ($response as $k => $v) {
-        $key = str_pad($k . ":",15, " ", STR_PAD_LEFT);
+        $key = str_pad($k . ":", 15, " ", STR_PAD_LEFT);
         $val = "  $v";
         echo "\n$key$val";
     }
