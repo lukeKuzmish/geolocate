@@ -1,4 +1,5 @@
 <?php
+
 $about = <<<EOC
 
        geolocate.php
