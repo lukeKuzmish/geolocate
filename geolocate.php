@@ -54,15 +54,28 @@ $about = <<<EOC
 
 EOC;
 
+// CONFIG
+$DEFAULT_GOOGLE_MAPS_LEVEL = '15';   // @int between 3 and 15
+
 
 if ((in_array("-h", $argv)) or (in_array("--help", $argv))) {
-    die($about);
+    echo $about;
+    exit();
+    //die($about);
 }
 
 $url = 'https://freegeoip.net/json/';
 for ($i = 1; $i < count($argv); $i++) {
     $json = file_get_contents($url . $argv[$i]);
     $response = json_decode($json, true);
+
+    if ( (isset($response['latitude'])) and (!empty($response['latitude'])) and (isset($response['longitude'])) and (!empty($response['longitude'])) ) {
+        $latitude = $response['latitude'];
+        $longitude = $response['longitude'];
+        $googleMapsUrl = "https://www.google.com/maps/preview/@{$latitude},{$longitude},{$DEFAULT_GOOGLE_MAPS_LEVEL}z"; 
+        $response['maps_url'] = $googleMapsUrl;
+    }
+
     echo "\n-------------\n{$argv[$i]}\n-------------\n";
     foreach ($response as $k => $v) {
         $key = str_pad($k . ":", 15, " ", STR_PAD_LEFT);
